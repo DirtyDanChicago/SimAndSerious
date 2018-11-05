@@ -242,14 +242,14 @@ MonoBehaviour:
   groundDetectTrigger: {fileID: 1021627214}
   groundContactFilter:
     useTriggers: 0
-    useLayerMask: 0
+    useLayerMask: 1
     useDepth: 0
     useOutsideDepth: 0
     useNormalAngle: 0
     useOutsideNormalAngle: 0
     layerMask:
       serializedVersion: 2
-      m_Bits: 0
+      m_Bits: 256
     minDepth: 0
     maxDepth: 0
     minNormalAngle: 0
@@ -497,10 +497,6 @@ Prefab:
     - target: {fileID: 4466502201678538, guid: 45e5f283009e3ec4488c274fd7439497, type: 2}
       propertyPath: m_RootOrder
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 1295323131105022, guid: 45e5f283009e3ec4488c274fd7439497, type: 2}
-      propertyPath: m_Layer
-      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 45e5f283009e3ec4488c274fd7439497, type: 2}
