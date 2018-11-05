@@ -25,8 +25,8 @@ public class CharacterScript : MonoBehaviour
     private Collider2D playerGroundCollider;
 
     //Input for moving and stopping physics.
-    //[SerializeField]
-    //private PhysicsMaterial2D playerMovingPhysicsMaterial, playerStoppingPhysicsMaterial;
+    [SerializeField]
+    private PhysicsMaterial2D playerMovingPhysicsMaterial, playerStoppingPhysicsMaterial;
 
     //Ground detect trigger.
     [SerializeField]
@@ -65,7 +65,7 @@ public class CharacterScript : MonoBehaviour
     //Fixed update for movement.
     void FixedUpdate()
     {
-        //UpdatePhysicsMaterial();
+        UpdatePhysicsMaterial();
 
         //Calls Move function.
         Move();
@@ -81,7 +81,7 @@ public class CharacterScript : MonoBehaviour
 
     }
 
-    /*private void UpdatePhysicsMaterial()
+    private void UpdatePhysicsMaterial()
     {
         if (Mathf.Abs(horizontalInput) > 0)
         {
@@ -92,7 +92,7 @@ public class CharacterScript : MonoBehaviour
         {
             playerGroundCollider.sharedMaterial = playerStoppingPhysicsMaterial;
         }
-    }*/
+    }
 
     private void Flip()
     {
