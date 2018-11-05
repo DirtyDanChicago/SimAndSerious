@@ -122,11 +122,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4466502201678538, guid: 45e5f283009e3ec4488c274fd7439497, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -1.9405446
+      value: -0.92
       objectReference: {fileID: 0}
     - target: {fileID: 4466502201678538, guid: 45e5f283009e3ec4488c274fd7439497, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -2.4845371
+      value: -3.12
       objectReference: {fileID: 0}
     - target: {fileID: 4466502201678538, guid: 45e5f283009e3ec4488c274fd7439497, type: 2}
       propertyPath: m_LocalPosition.z
@@ -231,7 +231,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidBody: {fileID: 1021627219}
-  jumpForce: 5
+  jumpForce: 7
   accelerationForce: 10
   maxSpeed: 25
   playerGroundCollider: {fileID: 1021627215}
@@ -341,11 +341,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4466502201678538, guid: 45e5f283009e3ec4488c274fd7439497, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 8.320382
+      value: 8.65
       objectReference: {fileID: 0}
     - target: {fileID: 4466502201678538, guid: 45e5f283009e3ec4488c274fd7439497, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -0.6046729
+      value: -1.41
       objectReference: {fileID: 0}
     - target: {fileID: 4466502201678538, guid: 45e5f283009e3ec4488c274fd7439497, type: 2}
       propertyPath: m_LocalPosition.z
