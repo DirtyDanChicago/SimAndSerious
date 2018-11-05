@@ -85,12 +85,12 @@ public class CharacterScript : MonoBehaviour
     {
         if (Mathf.Abs(horizontalInput) > 0)
         {
-            playerGroundCollider.sharedMaterial = playerMovingPhysicsMaterial;
+            groundDetectTrigger.sharedMaterial = playerMovingPhysicsMaterial;
         }
 
         else
         {
-            playerGroundCollider.sharedMaterial = playerStoppingPhysicsMaterial;
+            groundDetectTrigger.sharedMaterial = playerStoppingPhysicsMaterial;
         }
     }
 
@@ -104,7 +104,7 @@ public class CharacterScript : MonoBehaviour
 
     private void UpdateIsOnGround()
     {
-        isOnGround = groundDetectTrigger.OverlapCollider(groundContactFilter, groundHitDetectionResults) > 0;
+        isOnGround = playerGroundCollider.OverlapCollider(groundContactFilter, groundHitDetectionResults) > 0;
 
         Debug.Log("Is On Ground?: " + isOnGround);
     }
