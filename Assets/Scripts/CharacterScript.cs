@@ -8,6 +8,7 @@ public class CharacterScript : MonoBehaviour
     [SerializeField]
     private Rigidbody2D myRigidBody;
 
+    //Force of jump variable.
     [SerializeField]
     private float jumpForce = 10;
 
@@ -19,12 +20,15 @@ public class CharacterScript : MonoBehaviour
     [SerializeField]
     private float maxSpeed = 5;
 
+    //Player ground collider variable.
     [SerializeField]
     private Collider2D playerGroundCollider;
 
-    [SerializeField]
-    private PhysicsMaterial2D playerMovingPhysicsMaterial, playerStoppingPhysicsMaterial;
+    //Input for moving and stopping physics.
+    //[SerializeField]
+    //private PhysicsMaterial2D playerMovingPhysicsMaterial, playerStoppingPhysicsMaterial;
 
+    //Ground detect trigger.
     [SerializeField]
     private Collider2D groundDetectTrigger;
 
@@ -61,7 +65,7 @@ public class CharacterScript : MonoBehaviour
     //Fixed update for movement.
     void FixedUpdate()
     {
-        UpdatePhysicsMaterial();
+        //UpdatePhysicsMaterial();
 
         //Calls Move function.
         Move();
@@ -77,7 +81,7 @@ public class CharacterScript : MonoBehaviour
 
     }
 
-    private void UpdatePhysicsMaterial()
+    /*private void UpdatePhysicsMaterial()
     {
         if (Mathf.Abs(horizontalInput) > 0)
         {
@@ -88,7 +92,7 @@ public class CharacterScript : MonoBehaviour
         {
             playerGroundCollider.sharedMaterial = playerStoppingPhysicsMaterial;
         }
-    }
+    }*/
 
     private void Flip()
     {

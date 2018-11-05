@@ -186,11 +186,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myRigidBody: {fileID: 1021627219}
   jumpForce: 10
-  accelerationForce: 5
-  maxSpeed: 5
+  accelerationForce: 10
+  maxSpeed: 25
   playerGroundCollider: {fileID: 1021627215}
-  playerMovingPhysicsMaterial: {fileID: 0}
-  playerStoppingPhysicsMaterial: {fileID: 0}
   groundDetectTrigger: {fileID: 1021627214}
   groundContactFilter:
     useTriggers: 0
