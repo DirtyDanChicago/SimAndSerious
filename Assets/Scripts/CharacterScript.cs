@@ -37,6 +37,8 @@ public class CharacterScript : MonoBehaviour
 
     private Collider2D[] groundHitDetectionResults = new Collider2D[16];
 
+	private Animator myAnimator;
+
     private bool isOnGround;
 
     private bool facingRight = true;
@@ -45,7 +47,12 @@ public class CharacterScript : MonoBehaviour
     private float horizontalInput;
 
 
-    private void Update()
+	private void Start()
+	{
+		myAnimator = GetComponent<Animator>();
+	}
+
+	private void Update()
     {
         //Stops the rotation.
         Vector3 currentRotation = transform.localEulerAngles;
@@ -106,7 +113,18 @@ public class CharacterScript : MonoBehaviour
     {
         isOnGround = groundDetectTrigger.OverlapCollider(groundContactFilter, groundHitDetectionResults) > 0;
 
-        Debug.Log("Is On Ground?: " + isOnGround);
+		Debug.Log("Is On Ground?: " + isOnGround);//Changes from run to jump if in the air.
+        if (isOnGround == true)
+        {
+            myAnimator.SetBool("isOnGround", true);
+        }
+        else
+        {
+            myAnimator.SetBool("isOnGround", false);
+        }
+
+
+
     }
 
 
@@ -125,6 +143,8 @@ public class CharacterScript : MonoBehaviour
         clampedVelocity.x = Mathf.Clamp(myRigidBody.velocity.x, -maxSpeed, maxSpeed);
 
         myRigidBody.velocity = clampedVelocity;
+
+		myAnimator.SetFloat("speed", Mathf.Abs(horizontalInput));
 
     }
 
