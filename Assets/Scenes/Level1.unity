@@ -450,8 +450,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   myRigidBody: {fileID: 1021627219}
   jumpForce: 7
-  accelerationForce: 10
-  maxSpeed: 25
+  accelerationForce: 7.5
+  maxSpeed: 15
   playerGroundCollider: {fileID: 1021627215}
   playerMovingPhysicsMaterial: {fileID: 6200000, guid: e1dc47df04d2ba24186981868604f61e,
     type: 2}
