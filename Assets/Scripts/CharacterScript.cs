@@ -41,6 +41,8 @@ public class CharacterScript : MonoBehaviour
 
 	private Animator myAnimator;
 
+    private CircleCollider2D circleCollider2D;
+
     private bool isOnGround;
 
     private bool facingRight = true;
@@ -52,6 +54,7 @@ public class CharacterScript : MonoBehaviour
 	private void Start()
 	{
 		myAnimator = GetComponent<Animator>();
+        circleCollider2D = GetComponent<CircleCollider2D>();
 	}
 
 	private void Update()
@@ -115,7 +118,8 @@ public class CharacterScript : MonoBehaviour
     {
         isOnGround = groundDetectTrigger.OverlapCollider(groundContactFilter, groundHitDetectionResults) > 0;
 
-		Debug.Log("Is On Ground?: " + isOnGround);//Changes from run to jump if in the air.
+		//Debug.Log("Is On Ground?: " + isOnGround);
+        //Changes from run to jump if in the air.
         if (isOnGround == true)
         {
             myAnimator.SetBool("isOnGround", true);
@@ -160,7 +164,14 @@ public class CharacterScript : MonoBehaviour
         }
     }
 
-
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.name == "DeathCollider")
+        {
+            Debug.Log("Player entered death collider.");
+            SceneManager.LoadScene("Level1");
+        }
+    }
 
 
 }

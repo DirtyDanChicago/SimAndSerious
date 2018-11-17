@@ -13,13 +13,6 @@ public class DeathColliderScript : MonoBehaviour
     }
 
 
-    void Collision2D(BoxCollider2D boxCollider2D)
-    {
-        if (gameObject.name == "Character")
-        {
-            Debug.Log("Player entered death collider.");
-            SceneManager.LoadScene("Level1");
-        }
-    }
+    
 
 }
