@@ -163,7 +163,9 @@ public class CharacterScript : MonoBehaviour
             myRigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
+    
 
+    //Kills the player upon entering it, reseting the level.
     void OnTriggerEnter2D(Collider2D other)
     {
         if (other.name == "DeathCollider")

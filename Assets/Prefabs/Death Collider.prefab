@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4759205589069238}
   - component: {fileID: 61615481779977184}
-  - component: {fileID: 114554757672661288}
   m_Layer: 8
   m_Name: Death Collider
   m_TagString: Untagged
@@ -36,7 +35,7 @@ Transform:
   m_GameObject: {fileID: 1423824711153788}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.45, y: -10.8, z: 6.03125}
-  m_LocalScale: {x: 7.3905406, y: 0.5716154, z: 7.390546}
+  m_LocalScale: {x: 8, y: 1, z: 0}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -66,14 +65,3 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114554757672661288
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1423824711153788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae5ef1a9889cc1f4194d663e95423218, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
