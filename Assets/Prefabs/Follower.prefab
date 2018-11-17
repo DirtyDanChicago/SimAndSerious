@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9accf1d599693794ead6ba184d1c1acc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  jumpForce: 7
+  jumpForce: 9
   myRigidBody: {fileID: 50776199611855180}
   accelerationForce: 5
   maxSpeed: 15

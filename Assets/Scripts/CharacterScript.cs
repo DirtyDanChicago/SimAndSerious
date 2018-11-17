@@ -55,6 +55,7 @@ public class CharacterScript : MonoBehaviour
 	{
 		myAnimator = GetComponent<Animator>();
         circleCollider2D = GetComponent<CircleCollider2D>();
+        
 	}
 
 	private void Update()
@@ -172,6 +173,7 @@ public class CharacterScript : MonoBehaviour
         {
             Debug.Log("Player entered death collider.");
             SceneManager.LoadScene("Level1");
+            Physics2D.IgnoreLayerCollision(9, 10, false);
         }
     }
 

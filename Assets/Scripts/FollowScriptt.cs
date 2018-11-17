@@ -95,7 +95,6 @@ public class FollowScriptt : MonoBehaviour
         if (collisionCheck.gameObject.tag == "Player")
         {
             start = true;
-
             Physics2D.IgnoreLayerCollision(9, 10);
         }
     }
