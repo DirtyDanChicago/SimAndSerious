@@ -15,6 +15,19 @@ public class FollowScriptt : MonoBehaviour
     [SerializeField]
     public float maxSpeed = 25;
 
+    //Ground Detect trigger section:
+    private bool followerOnGround = true;
+
+    [SerializeField]
+    private Collider2D groundDetectTrigger;
+
+    [SerializeField]
+    private ContactFilter2D groundContactFilter;
+    private Collider2D[] groundHitDetectionResults = new Collider2D[16];
+
+    //For animation
+    private Animator myAnimator;
+
 
     public Transform target = null;                    // follow by target
     public float reactDelay = 0.5f;                    // how fast it react to target moves [edit it in edit mode only]
@@ -87,6 +100,24 @@ public class FollowScriptt : MonoBehaviour
 
             Physics2D.IgnoreLayerCollision(9, 10);
         }
+    }
+
+    private void UpdateIsOnGround()
+    {
+        followerOnGround = groundDetectTrigger.OverlapCollider(groundContactFilter, groundHitDetectionResults) > 0;
+
+        Debug.Log("Is On Ground?: " + followerOnGround);//Changes from run to jump if in the air.
+        if (followerOnGround == true)
+        {
+            myAnimator.SetBool("isOnGround", true);
+        }
+        else
+        {
+            myAnimator.SetBool("isOnGround", false);
+        }
+
+
+
     }
 
     // update this transform data
