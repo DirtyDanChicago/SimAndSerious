@@ -15,15 +15,17 @@ public class FollowScriptt : MonoBehaviour
     [SerializeField]
     public float maxSpeed = 25;
 
-    //Ground Detect trigger section:
-    private bool followerOnGround = true;
+    ////Ground Detect trigger section:
+    //private bool followerOnGround = true;
 
-    [SerializeField]
-    private Collider2D groundDetectTrigger;
+    //[SerializeField]
+    //private Collider2D groundDetectTrigger;
 
-    [SerializeField]
-    private ContactFilter2D groundContactFilter;
-    private Collider2D[] groundHitDetectionResults = new Collider2D[16];
+    //[SerializeField]
+    //private ContactFilter2D groundContactFilter;
+    ////private Collider2D[] groundHitDetectionResults = new Collider2D[16];
+
+
 
     //For animation
     private Animator myAnimator;
@@ -44,7 +46,7 @@ public class FollowScriptt : MonoBehaviour
     public class TargetRecord
     {
         public Vector3 position;    // world position
-        public float frank;
+        public float other;
 
         public TargetRecord(Vector3 position)
         {
@@ -52,7 +54,7 @@ public class FollowScriptt : MonoBehaviour
         }
         public TargetRecord(float position)
         {
-            this.frank = position;
+            this.other = position;
         }
     }
 
@@ -65,14 +67,12 @@ public class FollowScriptt : MonoBehaviour
     private TargetRecord _record = null;            // current record
     private bool _recording = true;                    // stop recording if true
     private int _arraySize = 2;
-    private BoxCollider2D box;
+    private Collision2D box;
 
 
     public void Start()
     {
         Initialize();
-        box = GetComponent<BoxCollider2D>();
-
     }
 
     public void Initialize()
@@ -90,35 +90,33 @@ public class FollowScriptt : MonoBehaviour
 
     }
 
-    void OnTriggerEnter2D(Collider2D collisionCheck)
+    void OnCollisionEnter2D(Collision2D collisionCheck)
     {
         if (collisionCheck.gameObject.tag == "Player")
         {
             start = true;
 
-            Debug.Log("Thing happemed.");
-
             Physics2D.IgnoreLayerCollision(9, 10);
         }
     }
 
-    private void UpdateIsOnGround()
-    {
-        followerOnGround = groundDetectTrigger.OverlapCollider(groundContactFilter, groundHitDetectionResults) > 0;
+    //private void UpdateIsOnGround()
+    //{
+    //    followerOnGround = groundDetectTrigger.OverlapCollider(groundContactFilter, groundHitDetectionResults) > 0;
 
-        Debug.Log("Is On Ground?: " + followerOnGround);//Changes from run to jump if in the air.
-        if (followerOnGround == true)
-        {
-            myAnimator.SetBool("isOnGround", true);
-        }
-        else
-        {
-            myAnimator.SetBool("isOnGround", false);
-        }
+    //    Debug.Log("Is On Ground?: " + followerOnGround);//Changes from run to jump if in the air.
+    //    if (followerOnGround == true)
+    //    {
+    //        myAnimator.SetBool("isOnGround", true);
+    //    }
+    //    else
+    //    {
+    //        myAnimator.SetBool("isOnGround", false);
+    //    }
 
 
 
-    }
+    //}
 
     // update this transform data
     public void LateUpdate()
