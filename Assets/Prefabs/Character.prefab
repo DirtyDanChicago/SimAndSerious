@@ -11,17 +11,18 @@ Prefab:
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 1600179840927910}
   m_IsPrefabParent: 1
---- !u!1 &1204772439080020
+--- !u!1 &1040720034018408
 GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   serializedVersion: 5
   m_Component:
-  - component: {fileID: 4781080520092022}
-  - component: {fileID: 20281925748313988}
-  - component: {fileID: 124288817680045530}
-  - component: {fileID: 81082634324775592}
+  - component: {fileID: 4641752480088592}
+  - component: {fileID: 20468520854014032}
+  - component: {fileID: 124207783122913832}
+  - component: {fileID: 81577526780720962}
+  - component: {fileID: 114934804977132316}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -58,32 +59,32 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1600179840927910}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.186, y: -0.8, z: 0}
+  m_LocalPosition: {x: -27.6, y: -3.5, z: 0}
   m_LocalScale: {x: 2.6359394, y: 2.6359394, z: 2.6359394}
   m_Children:
-  - {fileID: 4781080520092022}
+  - {fileID: 4641752480088592}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4781080520092022
+--- !u!4 &4641752480088592
 Transform:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1204772439080020}
+  m_GameObject: {fileID: 1040720034018408}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 6.8466353, y: 0.9145061, z: -3.793714}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4028318310705408}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!20 &20281925748313988
+--- !u!20 &20468520854014032
 Camera:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1204772439080020}
+  m_GameObject: {fileID: 1040720034018408}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -94,11 +95,11 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.1
+  far clip plane: 5000
+  field of view: 40
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 10
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -174,12 +175,12 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.6728606, y: 1.0127203}
   m_EdgeRadius: 0
---- !u!81 &81082634324775592
+--- !u!81 &81577526780720962
 AudioListener:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1204772439080020}
+  m_GameObject: {fileID: 1040720034018408}
   m_Enabled: 1
 --- !u!95 &95913917266301160
 Animator:
@@ -211,9 +212,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidBody: {fileID: 50162313925680524}
-  jumpForce: 7
-  accelerationForce: 12
-  maxSpeed: 12
+  jumpForce: 9
+  accelerationForce: 8
+  maxSpeed: 9
   playerGroundCollider: {fileID: 61369172462945086}
   playerMovingPhysicsMaterial: {fileID: 6200000, guid: e1dc47df04d2ba24186981868604f61e,
     type: 2}
@@ -234,6 +235,36 @@ MonoBehaviour:
     maxDepth: 0
     minNormalAngle: 0
     maxNormalAngle: 0
+--- !u!114 &114934804977132316
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1040720034018408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 72ece51f2901e7445ab60da3685d6b5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_ShowDebugText: 0
+  m_ShowCameraFrustum: 1
+  m_IgnoreTimeScale: 0
+  m_WorldUpOverride: {fileID: 0}
+  m_UpdateMethod: 2
+  m_DefaultBlend:
+    m_Style: 1
+    m_Time: 2
+  m_CustomBlends: {fileID: 0}
+  m_CameraCutEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+BrainEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  m_CameraActivatedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: Cinemachine.CinemachineBrain+VcamEvent, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
 --- !u!114 &114993391701119104
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -245,12 +276,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae5ef1a9889cc1f4194d663e95423218, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!124 &124288817680045530
+--- !u!124 &124207783122913832
 Behaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1204772439080020}
+  m_GameObject: {fileID: 1040720034018408}
   m_Enabled: 1
 --- !u!212 &212809174747765216
 SpriteRenderer:
