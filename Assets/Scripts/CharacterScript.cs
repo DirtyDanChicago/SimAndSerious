@@ -55,6 +55,7 @@ public class CharacterScript : MonoBehaviour
 	{
 		myAnimator = GetComponent<Animator>();
         circleCollider2D = GetComponent<CircleCollider2D>();
+        
 	}
 
 	private void Update()
