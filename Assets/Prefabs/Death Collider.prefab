@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4759205589069238}
   - component: {fileID: 61615481779977184}
-  - component: {fileID: 114519845498204170}
+  - component: {fileID: 114554757672661288}
   m_Layer: 8
   m_Name: Death Collider
   m_TagString: Untagged
@@ -66,7 +66,7 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
---- !u!114 &114519845498204170
+--- !u!114 &114554757672661288
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}

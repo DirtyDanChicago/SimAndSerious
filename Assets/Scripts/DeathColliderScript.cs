@@ -1,16 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class DeathColliderScript : MonoBehaviour {
+public class DeathColliderScript : MonoBehaviour
+{
+    private BoxCollider2D boxCollider2d;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private void Start()
+    {
+       boxCollider2d = GetComponent<BoxCollider2D>();
+    }
+
+
+    void Collision2D(BoxCollider2D boxCollider2D)
+    {
+        if (gameObject.name == "Character")
+        {
+            Debug.Log("Player entered death collider.");
+            SceneManager.LoadScene("Level1");
+        }
+    }
+
 }

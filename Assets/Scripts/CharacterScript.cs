@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class CharacterScript : MonoBehaviour
 {
@@ -157,4 +159,8 @@ public class CharacterScript : MonoBehaviour
             myRigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
+
+
+
+
 }
