@@ -189,7 +189,8 @@ public class CharacterScript : MonoBehaviour
     {
         health -= 1;
 
-        healthText.text = "Health: " + health;
+        healthText.text = "Health: " + health.ToString();
+
 
         if (health <= 0)
         {
