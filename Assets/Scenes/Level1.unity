@@ -9800,7 +9800,7 @@ GameObject:
   - component: {fileID: 1954511855}
   - component: {fileID: 1954511854}
   m_Layer: 0
-  m_Name: Podium
+  m_Name: podium
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
