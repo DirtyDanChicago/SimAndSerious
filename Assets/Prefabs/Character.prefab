@@ -73,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1722400444809062}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -3.793714}
+  m_LocalPosition: {x: 3.0748832, y: 0.011297104, z: -3.793714}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4808127652878250}
@@ -99,7 +99,7 @@ Camera:
   far clip plane: 5000
   field of view: 40
   orthographic: 1
-  orthographic size: 10
+  orthographic size: 5.75
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -223,9 +223,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   myRigidBody: {fileID: 50671711383316636}
-  jumpForce: 9
-  accelerationForce: 8
-  maxSpeed: 9
+  jumpForce: 11
+  accelerationForce: 9
+  maxSpeed: 10
   playerGroundCollider: {fileID: 61777491669785194}
   playerMovingPhysicsMaterial: {fileID: 6200000, guid: e1dc47df04d2ba24186981868604f61e,
     type: 2}
@@ -315,8 +315,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: 1046034573
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 7ea3358da7d004784b0ad638b74fa23c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
