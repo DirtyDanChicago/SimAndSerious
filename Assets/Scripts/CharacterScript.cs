@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
@@ -37,6 +38,12 @@ public class CharacterScript : MonoBehaviour
     [SerializeField]
     private ContactFilter2D groundContactFilter;
 
+    //Health Variable
+    [SerializeField]
+    private int health = 3;
+
+    public Text healthText;
+
     private Collider2D[] groundHitDetectionResults = new Collider2D[16];
 
 	private Animator myAnimator;
@@ -50,13 +57,14 @@ public class CharacterScript : MonoBehaviour
     //Horizontal, and vertical input variables.
     private float horizontalInput;
 
-
 	private void Start()
 	{
 		myAnimator = GetComponent<Animator>();
         circleCollider2D = GetComponent<CircleCollider2D>();
-        
-	}
+
+        healthText.text = "Health: " + health.ToString();
+
+    }
 
 	private void Update()
     {
@@ -120,6 +128,7 @@ public class CharacterScript : MonoBehaviour
         isOnGround = groundDetectTrigger.OverlapCollider(groundContactFilter, groundHitDetectionResults) > 0;
 
 		//Debug.Log("Is On Ground?: " + isOnGround);
+
         //Changes from run to jump if in the air.
         if (isOnGround == true)
         {
@@ -174,6 +183,21 @@ public class CharacterScript : MonoBehaviour
             Debug.Log("Player entered death collider.");
             SceneManager.LoadScene("Level1");
         }
+    }
+
+    //Player is hurt by spikes, if they take too many hits it resets the leve;.
+    public void Injury()
+    {
+        health -= 1;
+
+        healthText.text = "Health: " + health.ToString();
+
+
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
+        }
+
     }
 
 
