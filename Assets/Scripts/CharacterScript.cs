@@ -173,7 +173,25 @@ public class CharacterScript : MonoBehaviour
             myRigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
-    
+
+    //Check colllision with other objects
+    private void OnCollisionEnter2D(Collision2D collisionCheck)
+    {
+        if (collisionCheck.gameObject.layer == 10)
+        {
+            Physics2D.IgnoreLayerCollision(9, 10);
+        }
+        else if (collisionCheck.gameObject.layer == 11)
+        {
+            Physics2D.IgnoreLayerCollision(9, 11);
+        }
+        else if (collisionCheck.gameObject.layer == 12)
+        {
+            Physics2D.IgnoreLayerCollision(9, 12);
+        }
+    }
+
+
 
     //Kills the player upon entering it, reseting the level.
     void OnTriggerEnter2D(Collider2D other)
@@ -182,6 +200,11 @@ public class CharacterScript : MonoBehaviour
         {
             Debug.Log("Player entered death collider.");
             SceneManager.LoadScene("Level1");
+            //resets layer collisions with followers
+            Physics2D.IgnoreLayerCollision(9, 12, false);
+            Physics2D.IgnoreLayerCollision(9, 11, false);
+            Physics2D.IgnoreLayerCollision(9, 10, false);
+
         }
     }
 
@@ -195,7 +218,10 @@ public class CharacterScript : MonoBehaviour
 
         if (health <= 0)
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Physics2D.IgnoreLayerCollision(9, 12, false);
+            Physics2D.IgnoreLayerCollision(9, 11, false);
+            Physics2D.IgnoreLayerCollision(9, 10, false);
         }
 
     }
