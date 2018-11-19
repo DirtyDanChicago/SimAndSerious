@@ -24,10 +24,9 @@ GameObject:
   - component: {fileID: 61390589833551876}
   - component: {fileID: 58979278947453930}
   - component: {fileID: 114315879083055980}
-  - component: {fileID: 114617103224485462}
   m_Layer: 10
   m_Name: Follower
-  m_TagString: Follower
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -39,7 +38,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1299378431164200}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -17.22, y: -1.12, z: 0}
+  m_LocalPosition: {x: -2.56, y: -2.62, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -71,7 +70,7 @@ CircleCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1299378431164200}
-  m_Enabled: 0
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
@@ -79,7 +78,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: -0.3}
   serializedVersion: 2
-  m_Radius: 0.2
+  m_Radius: 0.45
 --- !u!61 &61390589833551876
 BoxCollider2D:
   m_ObjectHideFlags: 1
@@ -120,34 +119,16 @@ MonoBehaviour:
   myRigidBody: {fileID: 50776199611855180}
   accelerationForce: 5
   maxSpeed: 15
-  groundLayer:
-    serializedVersion: 2
-    m_Bits: 256
-  isOnGround: 0
-  jumpPosition: 0
   target: {fileID: 0}
   reactDelay: 0.2
   recordFPS: 60
-  followSpeed: 13
-  delayTime: 0
+  followSpeed: 7.5
   targetDistance: 3
   targetDistanceY: 0
   targetPositionOnStart: 0
   start: 0
-  storeJumpPosition: []
   gizmo: 1
   _L: 0
---- !u!114 &114617103224485462
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1299378431164200}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ae5ef1a9889cc1f4194d663e95423218, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!212 &212889573989289988
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -184,7 +165,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 060d9f890031c394ba3ff1dc1f6a5661, type: 3}
-  m_Color: {r: 1, g: 0.062745094, b: 0.8301631, a: 1}
+  m_Color: {r: 1, g: 0.06132078, b: 0.84999675, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
