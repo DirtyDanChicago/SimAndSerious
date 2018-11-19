@@ -128,7 +128,6 @@ public class CharacterScript : MonoBehaviour
         isOnGround = groundDetectTrigger.OverlapCollider(groundContactFilter, groundHitDetectionResults) > 0;
 
 		//Debug.Log("Is On Ground?: " + isOnGround);
-
         //Changes from run to jump if in the air.
         if (isOnGround == true)
         {

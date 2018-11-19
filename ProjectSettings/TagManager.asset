@@ -46,15 +46,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Ground
-    uniqueID: 2550981961
-    locked: 0
-  - name: Props
-    uniqueID: 3544009565
-    locked: 0
   - name: Player
     uniqueID: 1046034573
     locked: 0
-  - name: Spike
-    uniqueID: 2352967923
+  - name: Props
+    uniqueID: 3544009565
     locked: 0
