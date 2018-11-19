@@ -9,7 +9,7 @@ public class Spike : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.GetType() == typeof(BoxCollider2D))
         {
             CharacterScript player = collision.GetComponent<CharacterScript>();
 
