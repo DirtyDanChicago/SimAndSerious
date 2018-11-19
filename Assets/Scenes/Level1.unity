@@ -8848,8 +8848,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 316, y: 101.94998}
-  m_SizeDelta: {x: 160, y: 48.27}
+  m_AnchoredPosition: {x: 316, y: 94}
+  m_SizeDelta: {x: 160, y: 40.72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1316184302
 MonoBehaviour:
@@ -8883,7 +8883,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You've gathered a strong community, get to the podium to speak to them.
+  m_Text: You've gathered a strong communtiy, get to the exit!
 --- !u!222 &1316184303
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -9752,11 +9752,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4066558284417370, guid: 578a86844017e1840979be5a275f4083, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 101.18
+      value: 98.79191
       objectReference: {fileID: 0}
     - target: {fileID: 4066558284417370, guid: 578a86844017e1840979be5a275f4083, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -5.63
+      value: -5.6842175
       objectReference: {fileID: 0}
     - target: {fileID: 4066558284417370, guid: 578a86844017e1840979be5a275f4083, type: 2}
       propertyPath: m_LocalPosition.z
@@ -9787,6 +9787,7 @@ Prefab:
       value: Spike_Up (12)
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+<<<<<<< HEAD
   m_SourcePrefab: {fileID: 100100000, guid: 578a86844017e1840979be5a275f4083, type: 2}
   m_IsPrefabAsset: 0
 --- !u!1 &1954511853
@@ -9890,6 +9891,10 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 28
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+=======
+  m_ParentPrefab: {fileID: 100100000, guid: 578a86844017e1840979be5a275f4083, type: 2}
+  m_IsPrefabParent: 0
+>>>>>>> parent of d1690ff... Added podium end point.
 --- !u!1001 &2135784341
 Prefab:
   m_ObjectHideFlags: 0
