@@ -37,6 +37,10 @@ public class CharacterScript : MonoBehaviour
     [SerializeField]
     private ContactFilter2D groundContactFilter;
 
+    //Health Variable
+    [SerializeField]
+    private int health = 3;
+
     private Collider2D[] groundHitDetectionResults = new Collider2D[16];
 
 	private Animator myAnimator;
@@ -49,7 +53,6 @@ public class CharacterScript : MonoBehaviour
 
     //Horizontal, and vertical input variables.
     private float horizontalInput;
-
 
 	private void Start()
 	{
