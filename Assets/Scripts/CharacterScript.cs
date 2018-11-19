@@ -59,8 +59,6 @@ public class CharacterScript : MonoBehaviour
 		myAnimator = GetComponent<Animator>();
         circleCollider2D = GetComponent<CircleCollider2D>();
 
-        
-
     }
 
 	private void Update()
@@ -185,6 +183,12 @@ public class CharacterScript : MonoBehaviour
     public void Injury()
     {
         health -= 1;
+
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name); 
+        }
+
     }
 
 
