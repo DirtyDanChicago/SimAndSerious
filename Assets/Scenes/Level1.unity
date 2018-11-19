@@ -814,7 +814,7 @@ GameObject:
   - component: {fileID: 599056610}
   - component: {fileID: 599056609}
   m_Layer: 5
-  m_Name: Text
+  m_Name: HealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -870,7 +870,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Health: 3'
+  m_Text: 
 --- !u!222 &599056610
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -8764,25 +8764,30 @@ Prefab:
     - target: {fileID: 20145980055246076, guid: da5dedf1e659c5744a4a481d7508389c,
         type: 2}
       propertyPath: orthographic size
-      value: 5.75
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 4983194203964796, guid: da5dedf1e659c5744a4a481d7508389c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.0748832
+      value: 10.470651
       objectReference: {fileID: 0}
     - target: {fileID: 4983194203964796, guid: da5dedf1e659c5744a4a481d7508389c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.011297104
+      value: 1.3277999
       objectReference: {fileID: 0}
     - target: {fileID: 4983194203964796, guid: da5dedf1e659c5744a4a481d7508389c, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -3.793714
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 114454752875957312, guid: da5dedf1e659c5744a4a481d7508389c,
         type: 2}
       propertyPath: health
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 114454752875957312, guid: da5dedf1e659c5744a4a481d7508389c,
+        type: 2}
+      propertyPath: healthText
+      value: 
+      objectReference: {fileID: 599056609}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da5dedf1e659c5744a4a481d7508389c, type: 2}
   m_IsPrefabParent: 0

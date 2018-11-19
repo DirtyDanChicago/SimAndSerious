@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 
@@ -41,6 +42,8 @@ public class CharacterScript : MonoBehaviour
     [SerializeField]
     private int health = 3;
 
+    public Text healthText;
+
     private Collider2D[] groundHitDetectionResults = new Collider2D[16];
 
 	private Animator myAnimator;
@@ -58,6 +61,8 @@ public class CharacterScript : MonoBehaviour
 	{
 		myAnimator = GetComponent<Animator>();
         circleCollider2D = GetComponent<CircleCollider2D>();
+
+        healthText.text = "Health: " + health.ToString();
 
     }
 
@@ -183,6 +188,8 @@ public class CharacterScript : MonoBehaviour
     public void Injury()
     {
         health -= 1;
+
+        healthText.text = "Health: " + health;
 
         if (health <= 0)
         {
