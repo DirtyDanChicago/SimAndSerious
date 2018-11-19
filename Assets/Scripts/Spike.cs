@@ -5,6 +5,7 @@ using UnityEngine;
 public class Spike : MonoBehaviour
 {
 
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
 
@@ -12,8 +13,9 @@ public class Spike : MonoBehaviour
         {
             CharacterScript player = collision.GetComponent<CharacterScript>();
 
+            player.Injury();     
+      
             Debug.Log("Player entered the trigger.");
-
            
         }
     }
