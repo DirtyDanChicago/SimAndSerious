@@ -9805,12 +9805,17 @@ Prefab:
     m_RemovedComponents: []
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_SourcePrefab: {fileID: 100100000, guid: 578a86844017e1840979be5a275f4083, type: 2}
   m_IsPrefabAsset: 0
 =======
   m_ParentPrefab: {fileID: 100100000, guid: 578a86844017e1840979be5a275f4083, type: 2}
   m_IsPrefabParent: 0
 <<<<<<< HEAD
+>>>>>>> parent of 7c53a43... Follower Complete
+=======
+  m_ParentPrefab: {fileID: 100100000, guid: 578a86844017e1840979be5a275f4083, type: 2}
+  m_IsPrefabParent: 0
 >>>>>>> parent of 7c53a43... Follower Complete
 --- !u!1 &1954511853
 GameObject:
