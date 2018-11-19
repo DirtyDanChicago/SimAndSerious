@@ -9810,6 +9810,7 @@ Prefab:
 =======
   m_ParentPrefab: {fileID: 100100000, guid: 578a86844017e1840979be5a275f4083, type: 2}
   m_IsPrefabParent: 0
+<<<<<<< HEAD
 >>>>>>> parent of 7c53a43... Follower Complete
 --- !u!1 &1954511853
 GameObject:
@@ -9914,6 +9915,8 @@ Transform:
 =======
   m_ParentPrefab: {fileID: 100100000, guid: 578a86844017e1840979be5a275f4083, type: 2}
   m_IsPrefabParent: 0
+>>>>>>> parent of d1690ff... Added podium end point.
+=======
 >>>>>>> parent of d1690ff... Added podium end point.
 --- !u!1001 &2135784341
 Prefab:
