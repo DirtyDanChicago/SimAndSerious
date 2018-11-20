@@ -2,12 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
-public class StartScript : MonoBehaviour
+public class BeginScript : MonoBehaviour
 {
-    public void SceneSelect()
+    void Begin()
     {
-        SceneManager.LoadScene("Intro");
+        SceneManager.LoadScene("Level1");
     }
 	
 }
