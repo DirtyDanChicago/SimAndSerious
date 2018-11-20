@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 4702993981258426}
   - component: {fileID: 212295291811209124}
   - component: {fileID: 60980753323656628}
+  - component: {fileID: 114646674928105878}
   m_Layer: 0
   m_Name: Spike_Up
   m_TagString: Untagged
@@ -90,6 +91,17 @@ PolygonCollider2D:
       - {x: 0.11, y: -0.61}
       - {x: 0.26999998, y: -0.52}
       - {x: 0.34, y: -0.48}
+--- !u!114 &114646674928105878
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1190442756515904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d7328d75392ff14ab60cd91dbc73c8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212295291811209124
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -122,8 +134,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -750957731
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: aa9a3c4172adc784f817a70378f219fe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
