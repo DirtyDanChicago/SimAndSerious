@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class BeginScript : MonoBehaviour
 {
-    void Begin()
+    public void Begin()
     {
         SceneManager.LoadScene("Level1");
     }
