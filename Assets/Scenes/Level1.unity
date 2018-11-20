@@ -10269,6 +10269,7 @@ GameObject:
   - component: {fileID: 1954511856}
   - component: {fileID: 1954511855}
   - component: {fileID: 1954511854}
+  - component: {fileID: 1954511857}
   m_Layer: 0
   m_Name: Podium
   m_TagString: Podium
@@ -10359,6 +10360,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1954511857
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1954511853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc7ef1f8d9ff514a89df570d94947ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2024343926
 GameObject:
   m_ObjectHideFlags: 0

@@ -260,6 +260,8 @@ public class CharacterScript : MonoBehaviour
             winText.gameObject.SetActive(true);
 
             podium.gameObject.SetActive(true);
+
+
         }
     }
 
