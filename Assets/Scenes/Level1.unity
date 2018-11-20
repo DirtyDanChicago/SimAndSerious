@@ -838,11 +838,11 @@ MonoBehaviour:
   isOnGround: 1
   jumpPosition: 0
   target: {fileID: 1021627218}
-  reactDelay: 0.1
+  reactDelay: 0.2
   recordFPS: 60
   followSpeed: 10
   delayTime: 0
-  targetDistance: 3
+  targetDistance: 3.4
   targetDistanceY: 0
   targetPositionOnStart: 0
   start: 0
@@ -9189,11 +9189,11 @@ Prefab:
       objectReference: {fileID: 1316184302}
     - target: {fileID: 4983194203964796, guid: da5dedf1e659c5744a4a481d7508389c, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 3.8781893
+      value: 2.6916242
       objectReference: {fileID: 0}
     - target: {fileID: 4983194203964796, guid: da5dedf1e659c5744a4a481d7508389c, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0.014247459
+      value: 0.009889204
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: da5dedf1e659c5744a4a481d7508389c, type: 2}
@@ -10409,11 +10409,11 @@ MonoBehaviour:
   isOnGround: 1
   jumpPosition: 0
   target: {fileID: 1021627218}
-  reactDelay: 0.1
+  reactDelay: 0.2
   recordFPS: 60
   followSpeed: 10
   delayTime: 0
-  targetDistance: 3
+  targetDistance: 4
   targetDistanceY: 0
   targetPositionOnStart: 0
   start: 0

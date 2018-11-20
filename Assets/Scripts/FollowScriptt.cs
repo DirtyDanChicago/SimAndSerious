@@ -135,14 +135,20 @@ public class FollowScriptt : MonoBehaviour
             ///
             //This stops the followers from worrying about keeping distance from the player.This helps the followers jump the right distance so they can land on the platforms
             ///
-            if (isGrounded() == false)
+            if (isGrounded() == false && (target.position - transform.position).magnitude > targetDistance)
             {
                 float tempDistance = targetDistance;
-                Debug.Log("OKWJER");
-                targetDistance = 0;
+                Debug.Log("Off");
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x, transform.position.y, transform.position.z), Time.deltaTime * followSpeed);
                 transform.localScale = _record.scale1;
-                targetDistance = tempDistance;
+            }
+
+            if (isGrounded() == false && (target.position - transform.position).magnitude <= targetDistance)
+            {
+                float tempDistance = targetDistance;
+                Debug.Log("Off");
+                transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x, transform.position.y, transform.position.z), Time.deltaTime * followSpeed);
+                transform.localScale = _record.scale1;
             }
 
             ////move to the target
