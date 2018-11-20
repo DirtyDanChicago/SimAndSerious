@@ -42,13 +42,22 @@ public class CharacterScript : MonoBehaviour
     [SerializeField]
     private int health = 3;
 
+    //Determines the win state.
+    private bool followerOne = false;
+    private bool followerTwo = false;
+    private bool followerThree = false;
+
     public Text healthText;
+
+    public Text winText;
 
     private Collider2D[] groundHitDetectionResults = new Collider2D[16];
 
 	private Animator myAnimator;
 
     private CircleCollider2D circleCollider2D;
+
+    private GameObject podium;
 
     private bool isOnGround;
 
@@ -57,12 +66,15 @@ public class CharacterScript : MonoBehaviour
     //Horizontal, and vertical input variables.
     private float horizontalInput;
 
-	private void Start()
-	{
-		myAnimator = GetComponent<Animator>();
+    private void Start()
+    {
+        myAnimator = GetComponent<Animator>();
         circleCollider2D = GetComponent<CircleCollider2D>();
+        podium = GameObject.FindGameObjectWithTag("Podium");
 
         healthText.text = "Health: " + health.ToString();
+
+        podium.SetActive(false);
 
     }
 
@@ -81,6 +93,8 @@ public class CharacterScript : MonoBehaviour
 
         //Jump Input Function.
         HandleJumpInput();
+
+        Win();
     }
 
     //Fixed update for movement.
@@ -180,14 +194,20 @@ public class CharacterScript : MonoBehaviour
         if (collisionCheck.gameObject.layer == 10)
         {
             Physics2D.IgnoreLayerCollision(9, 10);
+
+            followerOne = true;
         }
         else if (collisionCheck.gameObject.layer == 11)
         {
             Physics2D.IgnoreLayerCollision(9, 11);
+
+            followerTwo = true;
         }
         else if (collisionCheck.gameObject.layer == 12)
         {
             Physics2D.IgnoreLayerCollision(9, 12);
+
+            followerThree = true;
         }
     }
 
@@ -203,6 +223,10 @@ public class CharacterScript : MonoBehaviour
             Physics2D.IgnoreLayerCollision(9, 12, false);
             Physics2D.IgnoreLayerCollision(9, 11, false);
             Physics2D.IgnoreLayerCollision(9, 10, false);
+
+            followerOne = false;
+            followerTwo = false;
+            followerThree = false;
 
         }
     }
@@ -221,9 +245,22 @@ public class CharacterScript : MonoBehaviour
             Physics2D.IgnoreLayerCollision(9, 12, false);
             Physics2D.IgnoreLayerCollision(9, 11, false);
             Physics2D.IgnoreLayerCollision(9, 10, false);
+
+            followerOne = false;
+            followerTwo = false;
+            followerThree = false;
         }
 
     }
 
+    public void Win()
+    {
+        if (followerOne == true && followerTwo == true && followerThree == true)
+        {
+            winText.gameObject.SetActive(true);
+
+            podium.gameObject.SetActive(true);
+        }
+    }
 
 }
