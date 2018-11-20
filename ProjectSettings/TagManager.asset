@@ -49,6 +49,9 @@ TagManager:
   - name: Props
     uniqueID: 3544009565
     locked: 0
+  - name: Follower
+    uniqueID: 2741270449
+    locked: 0
   - name: Player
     uniqueID: 1046034573
     locked: 0
