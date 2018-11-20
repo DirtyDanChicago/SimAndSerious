@@ -36,10 +36,14 @@ public class FollowScriptt : MonoBehaviour
     public class TargetRecord
     {
         public Vector3 position;    // world position
+        public Vector3 scale1; // Scale of player. Used to flip sprite/animation.
 
-        public TargetRecord(Vector3 position)
+
+        public TargetRecord(Vector3 position, Vector3 scale2)
         {
             this.position = position;
+            scale1 = scale2;
+
         }
 
     }
@@ -137,6 +141,7 @@ public class FollowScriptt : MonoBehaviour
                 Debug.Log("OKWJER");
                 targetDistance = 0;
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x, transform.position.y, transform.position.z), Time.deltaTime * followSpeed);
+                transform.localScale = _record.scale1;
                 targetDistance = tempDistance;
             }
 
@@ -146,6 +151,7 @@ public class FollowScriptt : MonoBehaviour
                 if (_record != null)
                 {
                     transform.position = Vector3.MoveTowards(transform.position, new Vector3(_record.position.x, transform.position.y, transform.position.z), Time.deltaTime * followSpeed);
+                    transform.localScale = _record.scale1;
                 }
 
             }
@@ -163,6 +169,7 @@ public class FollowScriptt : MonoBehaviour
                 {
                     //make a line which slows down the follower when they are close to player so it doesn't look so stop and go and stop clunky.
                     transform.position = Vector3.MoveTowards(transform.position, new Vector3(_record.position.x, transform.position.y, transform.position.z), Time.deltaTime * followSpeed);
+                    transform.localScale = _record.scale1;
                 }
             }
 
@@ -171,6 +178,7 @@ public class FollowScriptt : MonoBehaviour
                 if (_record != null)
                 {
                     transform.position = Vector3.MoveTowards(transform.position, new Vector3(_record.position.x, transform.position.y, transform.position.z), Time.deltaTime * followSpeed);
+                    transform.localScale = _record.scale1;
                 }
 
             }
@@ -197,7 +205,7 @@ public class FollowScriptt : MonoBehaviour
         else
         {
             // record target data
-            _records[_i] = new TargetRecord(target.position);
+            _records[_i] = new TargetRecord(target.position, target.localScale);
 
             // set next record index
             if (_i < _records.Length - 1)
@@ -229,7 +237,7 @@ public class FollowScriptt : MonoBehaviour
 
         for (int i = 0; i < _records.Length; i++)
         {
-            _records[i] = new TargetRecord(transform.position);
+            _records[i] = new TargetRecord(transform.position, target.localScale);
         }
 
         _record = _records[_j];
