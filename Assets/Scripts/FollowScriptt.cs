@@ -81,10 +81,9 @@ public class FollowScriptt : MonoBehaviour
 
     bool isGrounded()
     {
-        //Debug.Log("Called");
         Vector2 position = transform.position;
         Vector2 direction = Vector2.down;
-        float distance = 1.0f;
+        float distance = 6.0f;
         Debug.DrawRay(position, direction, Color.green);
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
         if (hit.collider != null)
@@ -121,18 +120,21 @@ public class FollowScriptt : MonoBehaviour
             //Did Distance/speed = time to get how long to delay the jump so the follower jumps at same location of where the player had jumped
             if (Input.GetButtonDown("Jump") && isGrounded())
             {
+                Debug.Log("Works");
                 jumpPosition = Math.Abs(target.position.x - transform.position.x);
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3((transform.position.x + jumpPosition), target.position.y, transform.position.z), Time.deltaTime * followSpeed);
                 delayTime = (Math.Abs(target.position.x - transform.position.x) / followSpeed);
                 Debug.Log(delayTime);
                 Invoke("HandleJumpInput", delayTime);
             }
+
             ///
-            //This stops the followers from worrying about keeping distance from the player. This helps the followers jump the right distance so they can land on the platforms
+            //This stops the followers from worrying about keeping distance from the player.This helps the followers jump the right distance so they can land on the platforms
             ///
             if (isGrounded() == false)
             {
                 float tempDistance = targetDistance;
+                Debug.Log("OKWJER");
                 targetDistance = 0;
                 transform.position = Vector3.MoveTowards(transform.position, new Vector3(target.position.x, transform.position.y, transform.position.z), Time.deltaTime * followSpeed);
                 targetDistance = tempDistance;
@@ -150,6 +152,7 @@ public class FollowScriptt : MonoBehaviour
             //This moves to the target
             if ((target.position - transform.position).magnitude > targetDistance)
             {
+
                 if (!_recording)
                 {
                     ResetRecordArray();
@@ -163,7 +166,7 @@ public class FollowScriptt : MonoBehaviour
                 }
             }
 
-            else if (targetDistanceY && Mathf.Abs(target.position.y - transform.position.y) > 0.05f && isGrounded())
+            else if (targetDistanceY && Mathf.Abs(target.position.y - transform.position.y) > 0.05f)
             {
                 if (_record != null)
                 {
