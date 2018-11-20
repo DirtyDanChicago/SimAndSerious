@@ -87,16 +87,16 @@ public class FollowScriptt : MonoBehaviour
     {
         Vector2 position = transform.position;
         Vector2 direction = Vector2.down;
-        float distance = 10.0f;
+        float distance = transform.localScale.y;
         Debug.DrawRay(position, direction, Color.green);
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
         if (hit.collider != null)
         {
-            //Debug.Log("Ground");
+           Debug.Log("Ground");
             return true;
         }
         //To check if it works
-        //Debug.Log("Off");
+        Debug.Log("Off");
         return false;
     }
 
