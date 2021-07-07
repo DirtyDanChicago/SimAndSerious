@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class CharacterScript : MonoBehaviour
 {
@@ -25,8 +28,8 @@ public class CharacterScript : MonoBehaviour
     private Collider2D playerGroundCollider;
 
     //Input for moving and stopping physics.
-    //[SerializeField]
-    //private PhysicsMaterial2D playerMovingPhysicsMaterial, playerStoppingPhysicsMaterial;
+    [SerializeField]
+    private PhysicsMaterial2D playerMovingPhysicsMaterial, playerStoppingPhysicsMaterial;
 
     //Ground detect trigger.
     [SerializeField]
@@ -35,7 +38,26 @@ public class CharacterScript : MonoBehaviour
     [SerializeField]
     private ContactFilter2D groundContactFilter;
 
+    //Health Variable
+    [SerializeField]
+    private int health = 3;
+
+    //Determines the win state.
+    private bool followerOne = false;
+    private bool followerTwo = false;
+    private bool followerThree = false;
+
+    public Text healthText;
+
+    public Text winText;
+
     private Collider2D[] groundHitDetectionResults = new Collider2D[16];
+
+	private Animator myAnimator;
+
+    private CircleCollider2D circleCollider2D;
+
+    private GameObject podium;
 
     private bool isOnGround;
 
@@ -44,8 +66,19 @@ public class CharacterScript : MonoBehaviour
     //Horizontal, and vertical input variables.
     private float horizontalInput;
 
+    private void Start()
+    {
+        myAnimator = GetComponent<Animator>();
+        circleCollider2D = GetComponent<CircleCollider2D>();
+        podium = GameObject.FindGameObjectWithTag("Podium");
 
-    private void Update()
+        healthText.text = "Health: " + health.ToString();
+
+        podium.SetActive(false);
+
+    }
+
+	private void Update()
     {
         //Stops the rotation.
         Vector3 currentRotation = transform.localEulerAngles;
@@ -60,12 +93,14 @@ public class CharacterScript : MonoBehaviour
 
         //Jump Input Function.
         HandleJumpInput();
+
+        Win();
     }
 
     //Fixed update for movement.
     void FixedUpdate()
     {
-        //UpdatePhysicsMaterial();
+        UpdatePhysicsMaterial();
 
         //Calls Move function.
         Move();
@@ -81,7 +116,7 @@ public class CharacterScript : MonoBehaviour
 
     }
 
-    /*private void UpdatePhysicsMaterial()
+    private void UpdatePhysicsMaterial()
     {
         if (Mathf.Abs(horizontalInput) > 0)
         {
@@ -92,7 +127,7 @@ public class CharacterScript : MonoBehaviour
         {
             playerGroundCollider.sharedMaterial = playerStoppingPhysicsMaterial;
         }
-    }*/
+    }
 
     private void Flip()
     {
@@ -106,7 +141,19 @@ public class CharacterScript : MonoBehaviour
     {
         isOnGround = groundDetectTrigger.OverlapCollider(groundContactFilter, groundHitDetectionResults) > 0;
 
-        //Debug.Log("Is On Ground?: " + isOnGround);
+		//Debug.Log("Is On Ground?: " + isOnGround);
+        //Changes from run to jump if in the air.
+        if (isOnGround == true)
+        {
+            myAnimator.SetBool("isOnGround", true);
+        }
+        else
+        {
+            myAnimator.SetBool("isOnGround", false);
+        }
+
+
+
     }
 
 
@@ -126,6 +173,8 @@ public class CharacterScript : MonoBehaviour
 
         myRigidBody.velocity = clampedVelocity;
 
+		myAnimator.SetFloat("speed", Mathf.Abs(horizontalInput));
+
     }
 
 
@@ -137,4 +186,83 @@ public class CharacterScript : MonoBehaviour
             myRigidBody.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
         }
     }
+
+
+    //Check colllision with other objects
+    private void OnCollisionEnter2D(Collision2D collisionCheck)
+    {
+        if (collisionCheck.gameObject.layer == 10)
+        {
+            Physics2D.IgnoreLayerCollision(9, 10);
+
+            followerOne = true;
+        }
+        else if (collisionCheck.gameObject.layer == 11)
+        {
+            Physics2D.IgnoreLayerCollision(9, 11);
+
+            followerTwo = true;
+        }
+        else if (collisionCheck.gameObject.layer == 12)
+        {
+            Physics2D.IgnoreLayerCollision(9, 12);
+
+            followerThree = true;
+        }
+    }
+
+
+
+    //Kills the player upon entering it, reseting the level.
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.name == "DeathCollider")
+        {
+            Debug.Log("Player entered death collider.");
+            SceneManager.LoadScene("Level1");
+            Physics2D.IgnoreLayerCollision(9, 12, false);
+            Physics2D.IgnoreLayerCollision(9, 11, false);
+            Physics2D.IgnoreLayerCollision(9, 10, false);
+
+            followerOne = false;
+            followerTwo = false;
+            followerThree = false;
+
+        }
+    }
+
+    //Player is hurt by spikes, if they take too many hits it resets the leve;.
+    public void Injury()
+    {
+        health -= 1;
+
+        healthText.text = "Health: " + health.ToString();
+
+
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            Physics2D.IgnoreLayerCollision(9, 12, false);
+            Physics2D.IgnoreLayerCollision(9, 11, false);
+            Physics2D.IgnoreLayerCollision(9, 10, false);
+
+            followerOne = false;
+            followerTwo = false;
+            followerThree = false;
+        }
+
+    }
+
+    public void Win()
+    {
+        if (followerOne == true && followerTwo == true && followerThree == true)
+        {
+            winText.gameObject.SetActive(true);
+
+            podium.gameObject.SetActive(true);
+
+
+        }
+    }
+
 }

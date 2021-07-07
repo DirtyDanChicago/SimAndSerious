@@ -3,7 +3,10 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Follower
+  - SpikeDetection
+  - Podium
   layers:
   - Default
   - TransparentFX
@@ -13,11 +16,11 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Ground
+  - Player
+  - Follower
+  - Follower2
+  - Follower3
   - 
   - 
   - 
@@ -38,6 +41,21 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 4003254531
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Props
+    uniqueID: 3544009565
+    locked: 0
+  - name: Follower
+    uniqueID: 2741270449
+    locked: 0
+  - name: Player
+    uniqueID: 1046034573
+    locked: 0
+  - name: Podium
+    uniqueID: 2595019981
     locked: 0

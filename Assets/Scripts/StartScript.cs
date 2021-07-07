@@ -7,7 +7,7 @@ public class StartScript : MonoBehaviour
 {
     public void SceneSelect()
     {
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene("Intro");
     }
 	
 }
